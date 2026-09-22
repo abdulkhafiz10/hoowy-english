@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eef5ff" />
+    <title>Hoowy.English — AI English Tutor</title>
+    <meta name="description" content="Персональная практика английского для школьников: грамматика, слова, письмо, речь и AI Tutor." />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-toast" id="app-toast" role="status" aria-live="polite"></div>
+    <button class="sidebar-open" id="sidebar-open" type="button" aria-label="Открыть меню" title="Открыть панель">»</button>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <button class="sidebar-close" id="sidebar-close" type="button" aria-label="Скрыть меню">×</button>
+        <a class="brand" href="#home" aria-label="Hoowy.English, на главную"><img class="brand-avatar" src="/assets/ai-avatar.png" alt="" /><span class="brand-name"><b>Hoowy.</b><small>English</small></span></a>
+        <p class="product-label">YOUR AI ENGLISH TUTOR</p>
+        <nav class="main-nav" aria-label="Разделы обучения">
+          <button class="nav-link active" data-view="home"><i>⌂</i>Главная</button>
+          <button class="nav-link" data-view="grammar"><i>▣</i>Грамматика</button>
+          <button class="nav-link" data-view="vocabulary"><i>◇</i>Слова</button>
+          <button class="nav-link" data-view="writing"><i>✎</i>Письмо</button>
+          <button class="nav-link" data-view="speaking"><i>◉</i>Речь</button>
+          <button class="nav-link" data-view="tutor"><i>✦</i>AI-репетитор</button>
+          <button class="nav-link" data-view="progress"><i>▥</i>Прогресс</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="student-avatar" id="sidebar-avatar">А</div>
+          <div><strong id="sidebar-name">Ученик</strong><small id="sidebar-level">AI определяет уровень</small></div>
+          <button class="compact-button" id="profile-button" title="Настройки профиля">⚙</button>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar"><div class="crumb" id="crumb">Your dashboard</div><div class="topbar-actions"><button class="icon-button" id="theme-toggle" type="button" title="Сменить тему" aria-label="Сменить тему">◐</button><button class="icon-button" id="language-toggle" title="Язык объяснений">RU</button><button class="avatar-small" id="top-avatar">А</button></div></header>
+
+        <section class="view active" id="home-view">
+          <div class="dashboard-hero">
+            <div class="dashboard-heading"><p class="eyebrow">YOUR LEARNING SPACE</p><h1>Abstract &amp;<br />Conceptual</h1><p>Изучай язык глубже, развивай мышление и достигай большего вместе с AI‑репетитором.</p><i></i><small>Чёткая структура. Персональный подход.<br />Реальный прогресс.</small><blockquote>Больше цели начинаются<br />с маленьких шагов.</blockquote></div>
+            <div class="learning-map" aria-label="Карта навыков">
+              <i class="map-line line-one"></i><i class="map-line line-two"></i><i class="map-line line-three"></i><i class="map-line line-four"></i>
+              <button class="map-skill grammar-node" data-go="grammar"><span class="function-icon book-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.5A2.5 2.5 0 0 1 6 3h5.5v16H6a2.5 2.5 0 0 0-2.5 2.5zM20.5 5.5A2.5 2.5 0 0 0 18 3h-5.5v16H18a2.5 2.5 0 0 1 2.5 2.5z"/></svg></span><b>Grammar</b><small>Понимай правила.<br />Строй уверенность.</small><em>→</em></button>
+              <button class="map-skill vocabulary-node" data-go="vocabulary"><span class="function-icon vocab-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="12" height="12" rx="2"/><rect x="8" y="8" width="12" height="12" rx="2"/></svg></span><b>Vocabulary</b><small>Расширяй словарный<br />запас. Говори свободнее.</small><em>→</em></button>
+              <button class="map-skill writing-node" data-go="writing"><span class="function-icon pen-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 20 4.2-1 10-10a2.2 2.2 0 0 0-3.1-3.1l-10 10zM13.7 7.2l3.1 3.1"/></svg></span><b>Writing</b><small>Выражай мысли.<br />Пиши уверенно.</small><em>→</em></button>
+              <button class="map-skill speaking-node" data-go="speaking"><span class="function-icon chat-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5.5A3.5 3.5 0 0 1 8.5 2h7A3.5 3.5 0 0 1 19 5.5v6A3.5 3.5 0 0 1 15.5 15H11l-4.5 4v-4A3.5 3.5 0 0 1 5 11.5z"/><path d="M9 8.5h.01M12 8.5h.01M15 8.5h.01"/></svg></span><b>Speaking</b><small>Практикуй речь.<br />Звучит естественно.</small><em>→</em></button>
+              <div class="learning-core"><div>AI</div><span>Твой<br />путь</span></div>
+            </div>
+            <div class="dashboard-growth"><div class="level-orb" id="home-level-orb">A1</div><div><b class="level-label">A1 · Начальный</b><span>Текущий уровень</span></div><div class="growth-line"><i id="level-bar"></i></div><small id="level-note">До следующего уровня: 0%</small><div class="streak-pill">🔥 <strong id="streak-number">0</strong> дней подряд</div></div>
+          </div>
+          <div class="section-heading"><div><h2>Твоя учебная панель</h2><p>Выбери навык — начнём с короткой практики.</p></div><button class="link-button" data-go="progress">Весь прогресс →</button></div>
+          <div class="skill-grid">
+            <button class="skill-card grammar-card" data-go="grammar"><span class="skill-icon">▣</span><h3>Grammar</h3><p>Правила, примеры и задания с объяснением ошибок.</p><b>Практиковать →</b></button>
+            <button class="skill-card vocabulary-card" data-go="vocabulary"><span class="skill-icon">◇</span><h3>Vocabulary</h3><p>Полезные слова, синонимы и короткие квизы.</p><b>Учить слова →</b></button>
+            <button class="skill-card writing-card" data-go="writing"><span class="skill-icon">✎</span><h3>Writing</h3><p>Пиши тексты и получай развёрнутую AI-проверку.</p><b>Проверить текст →</b></button>
+            <button class="skill-card speaking-card" data-go="speaking"><span class="skill-icon">◉</span><h3>Speaking</h3><p>Отвечай на вопросы и развивай уверенную речь.</p><b>Начать диалог →</b></button>
+          </div>
+          <div class="dashboard-row"><article class="level-card"><span class="mini-icon">⌁</span><div><p>Твой уровень определяет AI</p><h3 id="home-level-summary">A1 · Начальный</h3><div class="progress-line"><i id="level-bar-summary" style="width: 0%"></i></div><small id="level-note-summary">Выполняй задания — уровень повысится автоматически.</small></div></article><article class="streak-card"><span class="flame">♨</span><div><p>Твоя серия</p><h3><span id="streak-number-summary">0</span> дней подряд</h3><small>Регулярность превращает знания в навык.</small></div></article></div>
+        </section>
+
+        <section class="view" id="grammar-view">
+          <div class="page-title"><div><p class="eyebrow purple">GRAMMAR</p><h1>Понимай правила,<br />а не угадывай.</h1><p>AI подбирает уровень грамматики по твоим результатам.</p></div><div class="auto-level-tag">AI уровень: <strong id="grammar-level">A1</strong></div></div>
+          <article class="exercise-layout"><section class="question-card"><div class="exercise-count"><span id="grammar-count">B1</span></div><h2 id="grammar-question">If I had more time, I ___ travelling around the world.</h2><div class="answers" id="grammar-answers"></div><div class="exercise-actions"><button class="primary-button" id="check-grammar">Проверить <span>→</span></button><button class="plain-button" id="next-grammar">Другое задание</button></div></section><aside class="feedback-card empty" id="grammar-feedback"><span class="feedback-symbol">✦</span><h3>Готов к проверке?</h3><p>Выбери один вариант, и я объясню правило простыми словами.</p></aside></article>
+        </section>
+
+        <section class="view" id="vocabulary-view">
+          <div class="page-title vocabulary-title"><div><p class="eyebrow green">VOCABULARY</p><h1>Слова, которые<br />останутся с тобой.</h1><p>Запоминай слово в контексте, а не отдельным переводом.</p></div><div class="today-tag">▣ Слово дня<br /><strong>Сегодня</strong></div></div>
+          <div class="vocabulary-layout"><article class="word-card"><div class="word-main"><div class="word-top"><div><p class="word-type">СЕРИЯ СЛОВ</p><h2 id="word-name">significant</h2><p class="transcription" id="word-pronunciation">/sɪɡˈnɪfɪkənt/</p></div><button class="sound-button" id="speak-word" type="button" title="Прослушать произношение" aria-label="Прослушать произношение">🔊</button></div><p class="translation" id="word-translation">значительный, важный</p><p class="example" id="word-example">“This is a significant change in his life.”</p><div id="vocabulary-series" class="vocabulary-series" aria-label="Слова в текущей серии"></div><button class="primary-button green-button" id="learn-word">Начать серию <span>→</span></button></div></article><aside class="word-side"><article class="synonym-card"><p>СИНОНИМЫ</p><div id="synonyms"></div></article><article class="quiz-card"><p class="eyebrow green">ПРАКТИКА <span id="vocabulary-count">1 / 5</span></p><h3 id="vocabulary-question">Как будет по-английски: «значительный»?</h3><div class="mini-answers" id="vocabulary-answers"></div><button class="primary-button green-button" id="check-vocabulary">Проверить</button><button class="link-button" id="next-vocabulary-task" type="button" hidden>Следующее задание →</button><p class="quiz-feedback" id="vocabulary-feedback"></p></article></aside></div><button id="next-word" type="button" hidden aria-hidden="true"></button>
+        </section>
+
+        <section class="view" id="writing-view">
+          <div class="page-title writing-title"><div><p class="eyebrow orange">WRITING</p><h1>Пиши. Получай<br />обратную связь. Расти.</h1><p>AI найдёт ошибки и подскажет, как сделать текст сильнее.</p></div><div class="mode-switch" id="writing-modes"><button class="selected" data-writing-type="Essay">Essay</button><button data-writing-type="Email">Email</button><button data-writing-type="Report">Report</button></div></div>
+          <div class="writing-layout"><article class="editor-card"><div class="editor-label"><span id="writing-type">IELTS WRITING TASK 2</span><button id="next-writing" class="close-lite" type="button" title="Новая тема">↻</button></div><label for="writing-topic">Тема</label><p id="writing-topic">Some people believe that students should be required to do community service as part of their education. To what extent do you agree or disagree?</p><p id="writing-hint" class="small-generator-note"></p><div class="editor-tools" aria-hidden="true">B　<i>I</i>　<u>U</u></div><textarea id="writing-input" maxlength="2400" placeholder="Напишите эссе на английском здесь…"></textarea><div class="editor-footer"><span id="word-count">0 / 400 слов</span><button class="primary-button orange-button" id="analyze-writing">Проанализировать <span>→</span></button></div></article><aside class="writing-feedback"><div class="feedback-tabs" id="writing-feedback-tabs"><button class="selected" data-feedback-tab="review">Общий отзыв</button><button data-feedback-tab="errors">Ошибки</button></div><div id="writing-result" class="ai-result"><span class="feedback-symbol">✦</span><h3>Ваш отзыв появится здесь</h3><p>Напишите хотя бы два предложения на английском и нажмите «Проанализировать».</p></div></aside></div>
+        </section>
+
+        <section class="view" id="speaking-view">
+          <div class="page-title"><div><p class="eyebrow blue">SPEAKING</p><h1>Практикуй<br />настоящую речь.</h1><p>Говори в микрофон — сайт запишет и распознает твой ответ.</p></div><div class="auto-level-tag">Голосовой режим</div></div>
+          <div class="speaking-layout"><article class="speaking-card"><div class="microphone" id="microphone">◉</div><p class="speaking-step">ВОПРОС ДНЯ</p><h2 id="speaking-question">What do you usually do in your free time?</h2><p id="speaking-hint">Ответь голосом: постарайся сказать 3–5 предложений.</p><label class="mic-picker" for="microphone-device" id="mic-picker">Микрофон <select id="microphone-device"><option value="">Сначала разрешите доступ</option></select></label><textarea id="speaking-input" readonly aria-readonly="true" placeholder="Нажми «Разрешить микрофон и начать», разреши доступ к микрофону и говори по-английски."></textarea><div class="speaking-actions"><button class="voice-action" id="next-speaking">↻ Новый вопрос</button><button class="voice-action" id="record-speaking">◉ Разрешить микрофон и начать</button><button class="primary-button" id="check-speaking">Проверить ответ <span>→</span></button></div><p class="recording-status" id="recording-status">Нажми кнопку записи — браузер попросит доступ к микрофону.</p></article><aside class="speaking-feedback"><p class="eyebrow blue">AI FEEDBACK</p><div id="speaking-result" class="ai-result"><span class="feedback-symbol">✦</span><h3>Начнём разговор?</h3><p>После голосового ответа здесь появятся грамматика, словарь и советы по естественности речи.</p></div></aside></div>
+        </section>
+
+        <section class="view" id="tutor-view">
+          <div class="tutor-header"><div><p class="eyebrow blue">AI TUTOR</p><h1>Твой личный<br />репетитор.</h1><p>Спроси о любом правиле простыми словами.</p></div><div class="suggestions"><p>ПОПРОБУЙТЕ СПРОСИТЬ</p><button data-prompt="Объясни Present Perfect на уровне B1 с примерами.">Explain Present Perfect</button><button data-prompt="Дай мне 5 упражнений на conditionals уровня B1.">Дай 5 упражнений</button><button data-prompt="Как подготовиться к IELTS Speaking?">Подготовка к IELTS</button></div></div>
+          <article class="tutor-chat"><div class="chat-log" id="tutor-log"><article class="chat-message tutor-message"><span class="chat-avatar">✦</span><div><strong>Hoowy.English AI</strong><p>Привет! Я помогу разобраться с английским. Можешь написать, например: <em>«Объясни conditionals на уровне B1»</em>.</p></div></article></div><form id="tutor-form" class="tutor-composer"><label class="tutor-attach" for="tutor-file" title="Прикрепить фото или файл" aria-label="Прикрепить фото или файл">📎<input id="tutor-file" type="file" accept="image/png,image/jpeg,image/webp,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain" /></label><textarea id="tutor-input" maxlength="6000" placeholder="Спроси что-нибудь об английском…"></textarea><button class="send-button" type="submit" aria-label="Отправить">→</button></form><p class="tutor-attachment-status" id="tutor-attachment-status" aria-live="polite"></p><p class="api-note" id="api-note">Можно прикрепить PNG, JPG, WEBP, PDF, DOCX или TXT до 10 МБ — текст будет распознан.</p></article>
+        </section>
+
+        <section class="view" id="progress-view">
+          <div class="page-title"><div><p class="eyebrow purple">YOUR PROGRESS</p><h1>Твои маленькие<br />победы складываются.</h1><p>Смотри не только на количество заданий, но и на навыки, которые укрепляешь.</p></div><div class="streak-large"><span>♨</span><strong id="progress-streak">0</strong><small>дней подряд</small></div></div>
+          <div class="stats-grid"><article><span>✓</span><p>Заданий</p><strong id="completed-stat">0</strong></article><article><span>✎</span><p>Проверок Writing</p><strong id="writing-stat">0</strong></article><article><span>◉</span><p>Speaking-практик</p><strong id="speaking-stat">0</strong></article><article><span>◇</span><p>Новых слов</p><strong id="vocabulary-stat">0</strong></article></div>
+          <article class="skills-progress"><div class="section-heading"><div><h2>Навыки</h2><p>Показатель растёт после каждой завершённой практики.</p></div></div><div class="progress-visualization"><div id="skills-chart" class="skills-chart" role="img" aria-label="Общий прогресс по навыкам"><strong id="skills-average">0%</strong><span>общий прогресс</span></div><div id="skills-legend" class="skills-legend"></div></div><div id="skill-bars"></div></article><article class="goal-card"><div><p class="eyebrow purple">ЦЕЛЬ НА НЕДЕЛЮ</p><h2>Заниматься 3 раза</h2><p>Сегодня достаточно одного короткого задания. Главное — начать.</p></div><button class="primary-button" data-go="grammar">Продолжить <span>→</span></button></article></section>
+      </main>
+    </div>
+    <dialog id="profile-dialog"><form method="dialog" id="profile-form"><button class="dialog-close" value="cancel">×</button><p class="eyebrow purple">ПРОФИЛЬ</p><h2>Настройки ученика</h2><label for="profile-name">Имя</label><input id="profile-name" maxlength="32" autocomplete="name" placeholder="Ваше имя" /><label for="profile-avatar">Аватар</label><div class="avatar-options" id="avatar-options"><button type="button" data-avatar="А">А</button><button type="button" data-avatar="🙂">🙂</button><button type="button" data-avatar="🦊">🦊</button><button type="button" data-avatar="⭐">⭐</button></div><div class="avatar-upload-row"><div class="current-avatar-preview" id="current-avatar-preview">А</div><label class="upload-avatar" for="avatar-upload" title="Загрузить фотографию" aria-label="Загрузить фотографию">↑<input id="avatar-upload" type="file" accept="image/png,image/jpeg,image/webp" /></label></div><small class="avatar-help">PNG, JPG или WEBP до 10 МБ.</small><button class="primary-button dialog-submit" value="save">Сохранить <span>→</span></button><button class="sign-out-button" type="button" id="sign-out">Выйти</button></form></dialog>
+    <script src="/app.js"></script>
+  </body>
+</html>
